@@ -1,4 +1,4 @@
-name: build
+name: macos-10.15
 on: [push]
 
 jobs:
@@ -49,5 +49,5 @@ jobs:
         uses: actions/upload-artifact@v2.2.2
         with:
           name: libtensorflow-${{matrix.os}}.so
-          path: ${{github.workspace}}/bazel-bin/tensorflow/libtensorflow.so.2.9.0
+          path: ${{github.workspace}}/bazel-bin/tensorflow
           if-no-files-found: error
