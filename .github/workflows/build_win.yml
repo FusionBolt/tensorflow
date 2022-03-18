@@ -35,15 +35,16 @@ jobs:
 #      - name: Cur Bazel version
 #        run: ./bazel --version
 
-      - name: Build
-        if: runner.os != 'Windows'
-        working-directory: ${{github.workspace}}
-        run: bazel build --config opt --define framework_shared_object=false //tensorflow/tools/lib_package:libtensorflow
+      - name: Add msbuild to PATH
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1.9.0
+        with:
+          arch: win64
 
       - name: Build
         if: runner.os == 'Windows'
         working-directory: ${{github.workspace}}
-        run: bazel build --config=opt --define framework_shared_object=false //tensorflow/tools/lib_package:libtensorflow
+        run: bazel --bazelrc=Win.bazelrc build --define framework_shared_object=false //tensorflow/tools/lib_package:libtensorflow
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.2
