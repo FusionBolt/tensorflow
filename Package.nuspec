@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>MagicalTensorflowLib</id>
+    <version>0.0.1</version>
+    <authors>FusionBolt</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>libtensorflow without dependencies of libtensorflow_framework</description>
+    <dependencies>
+      <group targetFramework="netstandard2.0" />
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="so/libtensorflow.so" target="runtimes\linux-x64\native\lib" />
+    <file src="so/libtensorflow.dylib" target="runtimes\osx-x64\native\lib" />
+    <file src="so/tensorflow.dll" target="runtimes\win-x64\native\lib" />
+  </files>
+</package>
