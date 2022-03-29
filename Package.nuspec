@@ -13,8 +13,8 @@
   </metadata>
 
   <files>
-    <file src="so/libtensorflow.so" target="runtimes\linux-x64\native\lib" />
-    <file src="so/libtensorflow.dylib" target="runtimes\osx-x64\native\lib" />
-    <file src="so/tensorflow.dll" target="runtimes\win-x64\native\lib" />
+    <file src="so/libtensorflow.so" target="runtimes\linux-x64\native" />
+    <file src="so/libtensorflow.dylib" target="runtimes\osx-x64\native" />
+    <file src="so/tensorflow.dll" target="runtimes\win-x64\native" />
   </files>
 </package>
